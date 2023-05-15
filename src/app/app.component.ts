@@ -10,6 +10,7 @@ export class AppComponent {
   title = 'Spring Boot Tutorial!';
   message01 = 'Api has not been called yet';
   message02 = 'Api has not been called yet';
+  userinfo01 = '';
 
   constructor(private httpClient: HttpClient) {}
 
@@ -31,5 +32,13 @@ export class AppComponent {
 
   login() {
     window.location.href = '/oauth2/authorization/gateway';
+  }
+
+  userinfo() {
+    this.httpClient.get('/me', { responseType: 'text' }).subscribe({
+      next: (response) => (this.userinfo01 = response),
+      error: (error) => (this.userinfo01 = 'Error'),
+      complete: () => console.info('complete'),
+    });
   }
 }
