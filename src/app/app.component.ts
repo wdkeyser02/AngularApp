@@ -10,28 +10,35 @@ export class AppComponent {
   title = 'Spring Boot Tutorial!';
   message01 = 'Api has not been called yet';
   message02 = 'Api has not been called yet';
-  gateway01 = 'http://localhost:8090/';
-  gateway02 = 'http://localhost:8090/';
+  userinfo01 = '';
 
   constructor(private httpClient: HttpClient) {}
 
   button01() {
-    this.httpClient
-      .get(this.gateway01 + 'resource1', { responseType: 'text' })
-      .subscribe({
-        next: (response) => (this.message01 = response),
-        error: (error) => (this.message01 = 'Error'),
-        complete: () => console.info('complete'),
-      });
+    this.httpClient.get('/resource1', { responseType: 'text' }).subscribe({
+      next: (response) => (this.message01 = response),
+      error: (error) => (this.message01 = 'Error'),
+      complete: () => console.info('complete'),
+    });
   }
 
   button02() {
-    this.httpClient
-      .get(this.gateway02 + 'resource2', { responseType: 'text' })
-      .subscribe({
-        next: (response) => (this.message02 = response),
-        error: (error) => (this.message02 = 'Error'),
-        complete: () => console.info('complete'),
-      });
+    this.httpClient.get('/resource2', { responseType: 'text' }).subscribe({
+      next: (response) => (this.message02 = response),
+      error: (error) => (this.message02 = 'Error'),
+      complete: () => console.info('complete'),
+    });
+  }
+
+  login() {
+    window.location.href = '/oauth2/authorization/gateway';
+  }
+
+  userinfo() {
+    this.httpClient.get('/me', { responseType: 'text' }).subscribe({
+      next: (response) => (this.userinfo01 = response),
+      error: (error) => (this.userinfo01 = 'Error'),
+      complete: () => console.info('complete'),
+    });
   }
 }
