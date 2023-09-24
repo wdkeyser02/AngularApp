@@ -41,4 +41,8 @@ export class AppComponent {
       complete: () => console.info('complete'),
     });
   }
+
+  users_data() {
+    window.open('/resource3/users', '_blank');
+  }
 }
