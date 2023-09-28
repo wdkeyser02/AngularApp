@@ -34,6 +34,10 @@ export class AppComponent {
     window.location.href = '/oauth2/authorization/gateway';
   }
 
+  logout() {
+    window.location.href = '/logout';
+  }
+
   userinfo() {
     this.httpClient.get('/me', { responseType: 'text' }).subscribe({
       next: (response) => (this.userinfo01 = response),
@@ -44,5 +48,9 @@ export class AppComponent {
 
   users_data() {
     window.open('/resource3/users', '_blank');
+  }
+
+  client_data() {
+    window.open('/resource3/clients', '_blank');
   }
 }
