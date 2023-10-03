@@ -53,4 +53,34 @@ export class AppComponent {
   client_data() {
     window.open('/resource3/clients', '_blank');
   }
+
+  session_data() {
+    window.open('/resource3/sessions', '_blank');
+  }
+
+  authorization_data() {
+    window.open('/resource3/authorization', '_blank');
+  }
+
+  authorizationconsent_data() {
+    window.open('/resource3/authorizationconsent', '_blank');
+  }
+
+  jwks_data() {
+    window.open('http://localhost:9000/oauth2/jwks', '_blank');
+  }
+
+  info_data() {
+    window.open(
+      'http://localhost:9000/.well-known/oauth-authorization-server',
+      '_blank'
+    );
+  }
+
+  oidc_info_data() {
+    window.open(
+      'http://localhost:9000/.well-known/openid-configuration',
+      '_blank'
+    );
+  }
 }

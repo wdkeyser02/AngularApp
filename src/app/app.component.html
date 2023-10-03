@@ -11,6 +11,14 @@
   <h3>User info: {{ userinfo01 }}</h3>
   <button (click)="users_data()">View Users & Authorities</button>
   <button (click)="client_data()">View Clients</button>
+  <button (click)="session_data()">View Sessions</button>
+  <button (click)="authorization_data()">View Authorizations</button>
+  <button (click)="authorizationconsent_data()">
+    View Authorization Consents</button
+  ><br /><br />
+  <button (click)="jwks_data()">View JWKS</button>
+  <button (click)="info_data()">View Info</button>
+  <button (click)="oidc_info_data()">View OIDC Info</button>
 </div>
 
 <router-outlet></router-outlet>
