@@ -83,4 +83,8 @@ export class AppComponent {
       '_blank'
     );
   }
+
+  new_jwks() {
+    window.open('http://localhost:9000/oauth2/new_jwks', '_blank');
+  }
 }
