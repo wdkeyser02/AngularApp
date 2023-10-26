@@ -66,6 +66,10 @@ export class AppComponent {
     window.open('/resource3/authorizationconsent', '_blank');
   }
 
+  key_data() {
+    window.open('/resource3/key', '_blank');
+  }
+
   jwks_data() {
     window.open('http://localhost:9000/oauth2/jwks', '_blank');
   }
